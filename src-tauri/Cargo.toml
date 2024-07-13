@@ -1,0 +1,58 @@
+[package]
+name = "tinyget_ui"
+version = "0.0.0"
+description = "Tinyget UI"
+authors = ["RoyenHeart"]
+license = ""
+repository = ""
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "1.0", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.3", features = [
+    "dialog-message",
+    "fs-create-dir",
+    "fs-read-dir",
+    "fs-write-file",
+    "icon-ico",
+    "notification-all",
+    "os-all",
+    "path-all",
+    "process-relaunch",
+    "shell-open",
+    "system-tray",
+    "window-close",
+    "window-maximize",
+    "window-minimize",
+    "window-set-decorations",
+    "window-set-focus",
+    "window-set-fullscreen",
+    "window-set-size",
+    "window-start-dragging",
+    "window-unmaximize",
+    "window-unminimize",
+] }
+tauri-plugin-window-state = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "v1" }
+tauri-plugin-store = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "v1" }
+tauri-plugin-single-instance = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "v1" }
+window-shadows = { git = "https://github.com/tauri-apps/window-shadows", branch = "dev" }
+tokio = { version = "1.36.0", features = ["time"] }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+dbus = "0.9"
+
+[features]
+default = ["custom-protocol"]
+# DO NOT remove this
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+panic = "abort"   # Strip expensive panic clean-up logic
+codegen-units = 1 # Compile crates one after another so the compiler can optimize better
+lto = true        # Enables link to optimizations
+opt-level = "s"   # Optimize for binary size
+# strip = true  # Automatically strip symbols from the binary.

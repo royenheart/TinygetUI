@@ -1,0 +1,53 @@
+.softwareList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.softwareItem {
+    width: 95%;
+    padding: 0px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.softwareItem:hover {
+    transform: scale(1.01);
+}
+
+.softwareIntro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Display soft info */
+.softwareIntroDis {
+    padding: 10px;
+    width: 75%;
+    border-right: 1px solid #ccc;
+}
+
+/* Operations, button and so on */
+.softwareOperations {
+    padding: 5px;
+    text-align: center;
+    width: 25%;
+}
+
+.softwareOperations>button {
+    width: 100%;
+}
+
+.softwareDetails {
+    margin-top: 10px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
