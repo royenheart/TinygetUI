@@ -1,37 +1,34 @@
-import { Anchor, Text } from "@mantine/core";
-import { useHotkeys } from "@mantine/hooks";
-import { Fragment } from "react";
+import { Select } from '@mantine/core';
+import { useHotkeys } from '@mantine/hooks';
+import { useTranslation } from 'react-i18next';
 
-// when many languages are supported, a dropdown (Select) may be optimal
-export default function LanguageHeaders({ i18n }) {
+export default function LanguageSelector({ i18n }) {
+    const { t } = useTranslation();
     const languages = Object.keys(i18n.options.resources);
-    if (languages.length == 1) return <></>;
+    if (languages.length === 1) return null;
     const lang = i18n.resolvedLanguage;
-    let nextLangIdx = 0;
 
     function cycleLang() {
-        if (nextLangIdx == languages.length) nextLangIdx = 0;
-        i18n.changeLanguage(languages[nextLangIdx]);
+        const currentIndex = languages.indexOf(lang);
+        const nextIndex = (currentIndex + 1) % languages.length;
+        i18n.changeLanguage(languages[nextIndex]);
     }
 
-    // Render Language Switches
-    const header = languages.map((supportedLang, index) => {
-        const selectedLang = lang === supportedLang;
-        if (selectedLang) nextLangIdx = index + 1;
-        return <Fragment key={index}>
-            {
-                selectedLang ?
-                    <Text>{supportedLang.toUpperCase()}</Text> :
-                    <Anchor onClick={
-                        () => i18n.changeLanguage(supportedLang)
-                    }>
-                        {supportedLang.toUpperCase()}
-                    </Anchor>
-            }
-            {/* <Text>{index < languages.length - 1 && '|'}</Text> */}
-        </Fragment>;
-    });
-    // ctrl + shift + L
+    const data = languages.map((supportedLang) => ({
+        value: supportedLang,
+        label: supportedLang.toUpperCase(),
+    }));
+
     useHotkeys([['mod+Shift+L', cycleLang]]);
-    return header;
+
+    return (
+        <Select
+            label={t('Switch Language')}
+            value={lang}
+            onChange={(value) => {
+                if (value) i18n.changeLanguage(value);
+            }}
+            data={data}
+        />
+    );
 }

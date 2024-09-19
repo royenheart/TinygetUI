@@ -1,11 +1,22 @@
+import { SoftwaresLists } from '../components/SoftwaresGet';
 import { useTranslation } from 'react-i18next';
-// import { Element } from 'react-scroll'
+import { Title, Container, Space } from '@mantine/core';
 
 export default function () {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+
     return (
-        <div>
-            Test
-        </div >
+        <Container
+            fluid
+            style={{
+                height: 'calc(90vh - var(--app-shell-header-height, 0px) - var(--app-shell-footer-height, 0px))',
+            }}
+        >
+            <Title order={1} ta='center'>
+                {t('Software') + ' ' + t('Lists')}
+            </Title>
+            <Space></Space>
+            <SoftwaresLists onlyInstalled={true} onlyUpgradable={false} />
+        </Container>
     );
 }

@@ -1,19 +1,21 @@
 [package]
 name = "tinyget_ui"
-version = "0.0.0"
+version = "0.0.1"
 description = "Tinyget UI"
 authors = ["RoyenHeart"]
-license = ""
+license = "GPL-2.0-or-later"
 repository = ""
 edition = "2021"
 
 [build-dependencies]
 tauri-build = { version = "1.0", features = [] }
+tonic-build = "0.12.2"
 
 [dependencies]
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
 tauri = { version = "1.3", features = [
+    "window-hide",
     "dialog-message",
     "fs-create-dir",
     "fs-read-dir",
@@ -40,7 +42,12 @@ tauri-plugin-window-state = { git = "https://github.com/tauri-apps/plugins-works
 tauri-plugin-store = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "v1" }
 tauri-plugin-single-instance = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "v1" }
 window-shadows = { git = "https://github.com/tauri-apps/window-shadows", branch = "dev" }
-tokio = { version = "1.36.0", features = ["time"] }
+tokio = { version = "1.36.0", features = ["time", "macros", "rt-multi-thread"] }
+prost = "0.13.2"
+tonic = "0.12.2"
+log = "0.4.22"
+portable-pty = "0.8.1"
+whoami = "1.5.2"
 
 [target.'cfg(target_os = "linux")'.dependencies]
 dbus = "0.9"

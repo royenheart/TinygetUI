@@ -56,6 +56,9 @@ importers:
       '@tauri-apps/api':
         specifier: ^1.4.0
         version: 1.5.5
+      '@tauri-apps/plugin-log':
+        specifier: 2.0.0-rc.1
+        version: 2.0.0-rc.1
       '@tiptap/core':
         specifier: ^2.0.3
         version: 2.3.2(@tiptap/pm@2.3.2)
@@ -89,9 +92,6 @@ importers:
       localforage:
         specifier: ^1.10.0
         version: 1.10.0
-      r2-t2:
-        specifier: 'link:'
-        version: 'link:'
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -110,12 +110,24 @@ importers:
       react-transition-group:
         specifier: ^4.4.5
         version: 4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-virtualized-auto-sizer:
+        specifier: ^1.0.24
+        version: 1.0.24(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-window:
+        specifier: ^1.8.10
+        version: 1.8.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       simplebar-react:
         specifier: ^3.2.4
         version: 3.2.5(react@18.3.1)
       tauri-plugin-store-api:
         specifier: https://github.com/tauri-apps/tauri-plugin-store
         version: https://codeload.github.com/tauri-apps/tauri-plugin-store/tar.gz/b1ce9b38662a2990dddb30de1af88509a45e4625
+      xterm:
+        specifier: ^5.3.0
+        version: 5.3.0
+      xterm-addon-fit:
+        specifier: ^0.8.0
+        version: 0.8.0(xterm@5.3.0)
     devDependencies:
       '@tauri-apps/cli':
         specifier: ^1.4.0
@@ -717,6 +729,9 @@ packages:
     resolution: {integrity: sha512-Jgwj8BK/9YXZNzcqVDk1Al7+u5V9sWrZ8MhV41A1AKgJaicHuqlkc/qdx06sNDXvc+qprTPpBAaqnt891qOUIQ==}
     engines: {node: '>= 14.6.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
 
+  '@tauri-apps/api@2.0.0-rc.5':
+    resolution: {integrity: sha512-JWs69pE9NsQdcqTpEVBepAZ08+jgQWuthIiTiaWRq/YlCLgnqq0KfC9sDem55uJ0YpgsytZuyj+m6b6q8oiD2g==}
+
   '@tauri-apps/cli-darwin-arm64@1.5.13':
     resolution: {integrity: sha512-wXsBp6FIsQ1yoAEJ8dao7BkVdOp5xlfgGyAbJVCFKU3LTUqKw4A+ayxO6CV2lFfSaOdzdU86z+eJsl38nzmoSg==}
     engines: {node: '>= 10'}
@@ -781,6 +796,9 @@ packages:
     resolution: {integrity: sha512-wULOJNb/Dxc/E+Z0+7MkaqKYAmdjGJEFpZ5xcNhvC3BVX1O6MbhHjXGfwfu4mgIGhVqY1KJaKoXx7EDZAlk7Pw==}
     engines: {node: '>= 10'}
     hasBin: true
+
+  '@tauri-apps/plugin-log@2.0.0-rc.1':
+    resolution: {integrity: sha512-+Tz0zo4FDtC/5j7neeIq5ievgKbUXBV2+X5HtbaR8ZZ2bcksCp8UqeHd6cyyN+FSk4qaU01LIGkuExtxk1h/FA==}
 
   '@tiptap/core@2.3.2':
     resolution: {integrity: sha512-4sMpzYuxiG+fYMwPRXy+mLRVU315KEqzQUcBc2FEgSsmw9Kionykmkq3DvEco7rH8r0NdV/l9R49wVEtX54VqQ==}
@@ -1438,6 +1456,9 @@ packages:
   mdurl@2.0.0:
     resolution: {integrity: sha512-Lf+9+2r+Tdp5wXDXC4PcIBjTDtq4UKjCPMQhKIuzpJNW0b96kVqSwW0bT7FhRSfmAiFYgP+SCRvdrDozfh0U5w==}
 
+  memoize-one@5.2.1:
+    resolution: {integrity: sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==}
+
   merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
@@ -1741,6 +1762,19 @@ packages:
     peerDependencies:
       react: '>=16.6.0'
       react-dom: '>=16.6.0'
+
+  react-virtualized-auto-sizer@1.0.24:
+    resolution: {integrity: sha512-3kCn7N9NEb3FlvJrSHWGQ4iVl+ydQObq2fHMn12i5wbtm74zHOPhz/i64OL3c1S1vi9i2GXtZqNqUJTQ+BnNfg==}
+    peerDependencies:
+      react: ^15.3.0 || ^16.0.0-alpha || ^17.0.0 || ^18.0.0
+      react-dom: ^15.3.0 || ^16.0.0-alpha || ^17.0.0 || ^18.0.0
+
+  react-window@1.8.10:
+    resolution: {integrity: sha512-Y0Cx+dnU6NLa5/EvoHukUD0BklJ8qITCtVEPY1C/nL8wwoZ0b5aEw8Ff1dOVHw7fCzMt55XfJDd8S8W8LCaUCg==}
+    engines: {node: '>8.0.0'}
+    peerDependencies:
+      react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
 
   react@18.3.1:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
@@ -2069,6 +2103,14 @@ packages:
         optional: true
       utf-8-validate:
         optional: true
+
+  xterm-addon-fit@0.8.0:
+    resolution: {integrity: sha512-yj3Np7XlvxxhYF/EJ7p3KHaMt6OdwQ+HDu573Vx1lRXsVxOcnVJs51RgjZOouIZOczTsskaS+CpXspK81/DLqw==}
+    peerDependencies:
+      xterm: ^5.0.0
+
+  xterm@5.3.0:
+    resolution: {integrity: sha512-8QqjlekLUFTrU6x7xck1MsPzPA571K5zNqWm0M0oroYEWVOptZ0+ubQSkQ3uxIEhcIHRujJy6emDWX4A7qyFzg==}
 
   y18n@5.0.8:
     resolution: {integrity: sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA==}
@@ -2616,6 +2658,8 @@ snapshots:
 
   '@tauri-apps/api@1.5.5': {}
 
+  '@tauri-apps/api@2.0.0-rc.5': {}
+
   '@tauri-apps/cli-darwin-arm64@1.5.13':
     optional: true
 
@@ -2658,6 +2702,10 @@ snapshots:
       '@tauri-apps/cli-win32-arm64-msvc': 1.5.13
       '@tauri-apps/cli-win32-ia32-msvc': 1.5.13
       '@tauri-apps/cli-win32-x64-msvc': 1.5.13
+
+  '@tauri-apps/plugin-log@2.0.0-rc.1':
+    dependencies:
+      '@tauri-apps/api': 2.0.0-rc.5
 
   '@tiptap/core@2.3.2(@tiptap/pm@2.3.2)':
     dependencies:
@@ -3334,6 +3382,8 @@ snapshots:
 
   mdurl@2.0.0: {}
 
+  memoize-one@5.2.1: {}
+
   merge2@1.4.1: {}
 
   micromatch@4.0.5:
@@ -3674,6 +3724,18 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
+  react-virtualized-auto-sizer@1.0.24(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  react-window@1.8.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      '@babel/runtime': 7.24.5
+      memoize-one: 5.2.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
   react@18.3.1:
     dependencies:
       loose-envify: 1.4.0
@@ -3937,6 +3999,12 @@ snapshots:
   wrappy@1.0.2: {}
 
   ws@8.17.0: {}
+
+  xterm-addon-fit@0.8.0(xterm@5.3.0):
+    dependencies:
+      xterm: 5.3.0
+
+  xterm@5.3.0: {}
 
   y18n@5.0.8: {}
 

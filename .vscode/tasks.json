@@ -6,12 +6,11 @@
         {
             "label": "ui:dev",
             "type": "shell",
-            "problemMatcher": [], // TODO
+            "problemMatcher": [],
             // `dev` keeps running in the background
             // ideally you should also configure a `problemMatcher`
             // see https://code.visualstudio.com/docs/editor/tasks#_can-a-background-task-be-used-as-a-prelaunchtask-in-launchjson
             "isBackground": true,
-            // change this to your `beforeDevCommand`:
             "command": "pnpm",
             "args": [
                 "start"
@@ -20,8 +19,7 @@
         {
             "label": "ui:build",
             "type": "shell",
-            "problemMatcher": [], // TODO
-            // change this to your `beforeBuildCommand`:
+            "problemMatcher": [],
             "command": "pnpm",
             "args": [
                 "build"

@@ -50,7 +50,6 @@
 .titlebarLabel {
     display: inline;
     margin-left: 5px;
-    /* margin-left: 46 * 3 - 16 - 7.5;  // for center labels */
     line-height: var(--titlebar-height);
 }
 

@@ -1,4 +1,4 @@
-import { SoftwaresLists } from '../components/SoftwaresGet';
+import { SoftwaresHistories } from '../components/SoftwaresHistory';
 import { useTranslation } from 'react-i18next';
 import { Title, Container, Space } from '@mantine/core';
 
@@ -13,10 +13,10 @@ export default function () {
             }}
         >
             <Title order={1} ta='center'>
-                {t('Software') + ' ' + t('Lists')}
+                {t('Operations Histories')}
             </Title>
             <Space></Space>
-            <SoftwaresLists onlyInstalled={true} onlyUpgradable={true} />
+            <SoftwaresHistories />
         </Container>
     );
 }

@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Concert One
+- Font Author: Copyright (c) 2011, 2011 Johan Kallas (johankallas@gmail.com), Copyright (c) 2011, 2011 Mihkel Virkus (mihkelvirkus@gmail.com), with Reserved Font Name Concert.
+- Font Source: https://fonts.gstatic.com/s/concertone/v22/VEM1Ro9xs5PjtzCu-srDqRTlhv-CuVAQ.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

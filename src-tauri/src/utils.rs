@@ -1,8 +1,7 @@
-use serde::Serialize;
 use std::process::Command;
 use std::sync::Mutex;
 use std::time::Duration;
-use tauri::{Manager, State};
+use tauri::State;
 
 #[cfg(target_os = "linux")]
 pub struct DbusState(pub Mutex<Option<dbus::blocking::SyncConnection>>);
@@ -78,32 +77,4 @@ pub fn show_item_in_folder(path: String) -> Result<(), String> {
         }
     }
     Ok(())
-}
-
-// useful if not saving the window state
-#[tauri::command]
-pub fn show_main_window(window: tauri::Window) {
-    // replace "main" by the name of your window
-    window.get_window("main").unwrap().show().unwrap();
-}
-
-#[derive(Clone, Serialize)]
-struct LongRunningThreadStruct {
-    message: String,
-}
-
-pub async fn long_running_thread(app: &tauri::AppHandle) {
-    loop {
-        // sleep
-        tokio::time::sleep(Duration::from_secs(2)).await;
-        let _ = app.get_window("main").and_then(|w| {
-            w.emit(
-                "longRunningThread",
-                LongRunningThreadStruct {
-                    message: "LRT Message".into(),
-                },
-            )
-            .ok()
-        });
-    }
 }
