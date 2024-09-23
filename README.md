@@ -27,7 +27,7 @@ The GUI now supports list / install / uninstall / search softwares, check system
 - [React Icons](https://react-icons.github.io/react-icons)
 - [Mantine Docs](https://mantine.dev/pages/basics/)
 - [Mantine Default Theme](https://github.com/mantinedev/mantine/blob/master/src/mantine-styles/src/theme/default-theme.ts)
-- [react-18next Trans Component](https://react.i18next.com/latest/trans-component)
+- [react-i18next Trans Component](https://react.i18next.com/latest/trans-component)
 - [prost the protocal buffers implementation](https://github.com/tokio-rs/prost)
 - [tonic for gRPC C/S implementation](https://github.com/hyperium/tonic)
 - [portable_pty a cross platform API for working with the psuedo terminal](https://docs.rs/portable-pty/latest/portable_pty/)
@@ -71,3 +71,7 @@ sudo cargo tauri build
 ```
 
 On linux will generate deb / rpm and AppImage packages
+
+## TODO List
+
+- [ ] Add Auto Update Functions
