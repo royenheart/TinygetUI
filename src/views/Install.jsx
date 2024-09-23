@@ -9,6 +9,7 @@ export default function () {
         <Container
             fluid
             style={{
+                // See https://github.com/orgs/mantinedev/discussions/3588
                 height: 'calc(90vh - var(--app-shell-header-height, 0px) - var(--app-shell-footer-height, 0px))',
             }}
         >
