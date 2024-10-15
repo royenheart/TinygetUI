@@ -42,7 +42,7 @@ The GUI now supports list / install / uninstall / search softwares, check system
 - Install tauri-cli / create-tauri-app by `cargo install tauri-cli` and `cargo install create-tauri-app`
 - Install [tinyget](https://gitee.com/tinylab/tinyget) cli interface
 - Run `pnpm install` to install frontend dependencies
-- Run `cargi tauri dev` or `pnpm dev` for developing. If you use vscode, we also provide the project's debug config.
+- Run `cargo tauri dev` or `pnpm dev` for developing. If you use vscode, we also provide the project's debug config.
 
 ## Thanks to
 
